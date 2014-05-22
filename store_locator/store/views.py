@@ -26,4 +26,4 @@ class StoreDetailListView(ListView):
 
 	def get_queryset(self):
 		pk = self.kwargs['pk']
-		return Product.objects.filter(available_in=pk)
+		return Product.objects.filter(available_in=pk).order_by('category__name', 'name')

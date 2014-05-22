@@ -7,14 +7,9 @@
             {% endblock title %}
         </title>
 
-        <meta name="msapplication-TileColor" content="#5bc0de"/>
-        <meta name="msapplication-TileImage" content="/static/img/metis-tile.png"/>
-
-        <link rel="stylesheet" href="/static/css/bootstrap.css">
-        <link rel="stylesheet" href="/static/css/font-awesome.css"/>
-
-        <script src="/static/js/jquery.min.js"></script>
-        <script src="/static/js/bootstrap.js"></script>
+        {% load bootstrap3 %}
+        {% bootstrap_css %}
+        {% bootstrap_javascript %}
 
         {% block stylesheet %}
         {% endblock stylesheet %}

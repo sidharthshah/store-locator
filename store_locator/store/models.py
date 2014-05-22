@@ -11,5 +11,8 @@ class Store(models.Model):
     zipcode = models.CharField(max_length=5)
     contact_no = models.CharField(max_length=100, blank=True, null=True)
 
+    class Meta:
+        ordering = ['name']
+
     def __unicode__(self):
         return self.name
