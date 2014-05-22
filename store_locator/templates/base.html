@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>
+            {% block title %}
+            {% endblock title %}
+        </title>
+
+        <meta name="msapplication-TileColor" content="#5bc0de"/>
+        <meta name="msapplication-TileImage" content="/static/img/metis-tile.png"/>
+
+        <link rel="stylesheet" href="/static/css/bootstrap.css">
+        <link rel="stylesheet" href="/static/css/font-awesome.css"/>
+
+        <script src="/static/js/jquery.min.js"></script>
+        <script src="/static/js/bootstrap.js"></script>
+
+        {% block stylesheet %}
+        {% endblock stylesheet %}
+    </head>
+
+    <body>
+        <div class="container">
+            {% block main-content %}
+            {% endblock main-content %}
+        </div>
+    </body>
+</html>
