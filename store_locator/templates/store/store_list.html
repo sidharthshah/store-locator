@@ -1,0 +1,13 @@
+{% load bootstrap3 %}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+
+<h1>Welcome To Zach's Pricelist</h1>
+
+<ul>
+{% for store in object_list %}
+    <li>{{ store.name }} - {{ store.zipcode }}</li>
+{% empty %}
+    <li>No stores in database yet.</li>
+{% endfor %}
+</ul>

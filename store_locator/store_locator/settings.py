@@ -1,3 +1,5 @@
+from os.path import join
+
 """
 Django settings for store_locator project.
 
@@ -22,6 +24,10 @@ SECRET_KEY = 'iyk-064x=580=60=k8-e+^f5m2rn&uzs$$9j(n=i21_$@$&xx7'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+TEMPLATE_DIRS = (
+    join(BASE_DIR,  'templates'),
+)
+
 TEMPLATE_DEBUG = True
 
 ALLOWED_HOSTS = []
@@ -37,6 +43,7 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'bootstrap3',
     'store',
     'product'
 )
