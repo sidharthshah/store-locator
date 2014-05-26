@@ -26,9 +26,15 @@ class Product(models.Model):
     name = models.CharField(max_length=255)
     brand = models.ForeignKey(Brand)
     unit = models.ForeignKey(Unit)
-    price = models.DecimalField(max_digits=10, decimal_places=2)
     category = models.ForeignKey(Category)
-    available_in = models.ManyToManyField(Store)
 
     def __unicode__(self):
         return self.name
+
+class StoreCatalog(models.Model):
+    product = models.ForeignKey(Product)
+    store = models.ManyToManyField(Store)
+    price = models.DecimalField(max_digits=10, decimal_places=2)
+
+    def __unicode__(self):
+        return "%s is available in %s" % (self.product, self.store)
