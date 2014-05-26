@@ -29,10 +29,10 @@ class StoreDetailListView(ListView):
             current_store = Store.objects.filter(id=pk)
             product_pks = [store_catalog.product.id for store_catalog in StoreCatalog.objects.filter(store=current_store)]
             products = Product.objects.filter(pk__in=product_pks).order_by('category__name', 'name')
-            
+
             for i, current_product in enumerate(products):
                 store_catalog = StoreCatalog.objects.get(store=current_store, product=current_product)
                 products[i].price = store_catalog.price
-                print products[i].price
+
             return products
-                
+
